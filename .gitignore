@@ -6,6 +6,8 @@ package-lock.json
 coverage/
 .idea/
 .DS_Store
+.project
+Thumbs.db
 *.sw*
 *.un~
 *.tgz
