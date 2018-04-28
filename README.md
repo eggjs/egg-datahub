@@ -62,3 +62,4 @@ This project follows the git-contributor [spec](https://github.com/xudafeng/git-
 ## License
 
 The MIT License (MIT)
+
