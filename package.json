@@ -1,0 +1,57 @@
+{
+  "name": "egg-datahub",
+  "version": "1.0.0",
+  "description": "egg plugin for Macaca DataHub",
+  "eggPlugin": {
+    "name": "datahub",
+    "env": [
+      "local",
+      "unittest"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/macacajs/egg-datahub.git"
+  },
+  "keywords": [
+    "egg",
+    "plugin",
+    "egg-plugin",
+    "eggPlugin"
+  ],
+  "dependencies": {
+    "macaca-datahub": "1",
+    "xutil": "^1.0.11"
+  },
+  "devDependencies": {
+    "autod": "2",
+    "autod-egg": "^1.0.0",
+    "egg": "2",
+    "egg-bin": "1",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.13.1",
+    "eslint": "3",
+    "eslint-config-egg": "3",
+    "git-contributor": "^1.0.8",
+    "pre-commit": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint lib app config test app.js agent.js",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "contributors": "git-contributor"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "ci": {
+    "version": "8"
+  },
+  "license": "MIT"
+}
