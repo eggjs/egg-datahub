@@ -45,7 +45,7 @@
     "lint": "eslint lib app config test app.js agent.js",
     "ci": "npm run lint && npm run cov",
     "autod": "autod",
-    "contributors": "git-contributor"
+    "contributor": "git-contributor"
   },
   "pre-commit": [
     "lint"
