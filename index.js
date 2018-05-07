@@ -13,11 +13,7 @@ exports.getClient = (options = {}) => {
   });
 
   datahubClient.getMockDataByScene = async (_options = {}) => {
-    await datahubClient
-      .updateSceneByProjectIdAndDataId(hubName, _options.name, {
-        currentScene: _options.scene || 'default',
-      });
-    return await datahubClient.getDataByProjectIdAndDataId(hubName, _options.name);
+    return await datahubClient.getSceneDataByProjectIdAndDataId(hubName, _options.name, _options.scene || 'default');
   };
 
   return datahubClient;

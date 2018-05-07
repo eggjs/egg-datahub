@@ -1,6 +1,6 @@
 {
   "name": "egg-datahub",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "egg plugin for Macaca DataHub",
   "eggPlugin": {
     "name": "datahub",
@@ -21,7 +21,7 @@
     "eggPlugin"
   ],
   "dependencies": {
-    "datahub-nodejs-sdk": "^1.0.7",
+    "datahub-nodejs-sdk": "^1.0.9",
     "macaca-datahub": "1",
     "xutil": "^1.0.11"
   },

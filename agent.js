@@ -3,15 +3,25 @@
 const _ = require('xutil');
 const path = require('path');
 const DataHub = require('macaca-datahub');
+const detect = require('detect-port');
 
-module.exports = app => {
+function sleep(ms) {
+  return new Promise(resolve => {
+    setTimeout(resolve, ms);
+  });
+}
+
+module.exports = agent => {
   const datahubConfig = Object.assign({
-    store: path.join(app.baseDir, 'data'),
-  }, app.config.datahub);
+    store: path.join(agent.baseDir, 'data'),
+  }, agent.config.datahub);
   _.mkdir(path.resolve(datahubConfig.store));
   const datahub = new DataHub(datahubConfig);
-  datahub.startServer()
-    .then(() => console.log('Macaca DataHub started'))
-    .catch(e => console.log('Macaca DataHub error', e));
+  agent.beforeStart(async () => {
+    await datahub.startServer();
+    const port = datahub.options.port;
+    while(await detect(port) === port) {
+      await sleep(1000)
+    }
+  })
 };
-
