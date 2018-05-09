@@ -20,8 +20,8 @@ module.exports = agent => {
   agent.beforeStart(async () => {
     await datahub.startServer();
     const port = datahub.options.port;
-    while(await detect(port) === port) {
-      await sleep(1000)
+    while (await detect(port) === port) {
+      await sleep(1000);
     }
-  })
+  });
 };
