@@ -1,6 +1,6 @@
 {
   "name": "egg-datahub",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "egg plugin for Macaca DataHub",
   "eggPlugin": {
     "name": "datahub",
