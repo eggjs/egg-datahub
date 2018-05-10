@@ -11,6 +11,10 @@ function sleep(ms) {
   });
 }
 
+process.on('SIGINT', () => { // fix agent.exit error 110
+  process.exit(0);
+});
+
 module.exports = agent => {
   const datahubConfig = Object.assign({
     store: path.join(agent.baseDir, 'data'),
