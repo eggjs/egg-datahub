@@ -12,7 +12,7 @@ exports.getClient = (options = {}) => {
     port,
   });
 
-  datahubClient.getMockDataByScene = async (_options = {}) => {
+  datahubClient.switchScene = async (_options = {}) => {
 
     const scene = _options.scene || 'default';
 
