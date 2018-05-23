@@ -50,6 +50,9 @@ exports.datahub = {
 };
 ```
 
+## Example
+
+[hackernews-datahub](https://github.com/eggjs/examples/tree/master/hackernews-datahub)
 
 <!-- GITCONTRIBUTOR_START -->
 
