@@ -30,7 +30,7 @@
 $ npm i egg-datahub --save-dev
 ```
 
-## configuration
+## Configuration
 
 config/plugin.js
 
@@ -50,37 +50,6 @@ exports.datahub = {
 };
 ```
 
-## Common Usage
-
-```javascript
-const mm = require('egg-mock');
-const { getClient } = require('egg-datahub');
-
-describe('some test', () => {
-  let app;
-  let dataHubClient;
-  before(() => {
-    app = mm.app({
-      baseDir: 'apps/foo'
-    });
-    return app.ready();
-  })
-  beforeEach(() => {
-    dataHubClient = getClient({
-      port: app.config.datahub.port,
-      hubName: 'hubNameOrAppName',
-    })
-  })
-
-  after(() => app.close());
-
-  it('should get mock data', function * () {
-    const data = yield dataHubClient.getMockDataByScene({
-      name: 'API name',
-    });
-  });
-});
-```
 
 <!-- GITCONTRIBUTOR_START -->
 
