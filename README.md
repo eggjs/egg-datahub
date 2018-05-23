@@ -22,7 +22,7 @@
 [download-image]: https://img.shields.io/npm/dm/egg-datahub.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-datahub
 
-> egg plugin for Macaca DataHub
+> Macaca DataHub plugin for Egg.js
 
 ## Installation
 
