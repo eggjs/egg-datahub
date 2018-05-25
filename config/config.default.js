@@ -1,6 +1,6 @@
 'use strict';
 
 exports.datahub = {
-  port: 5678,
+  port: 9200,
   hostname: 'localhost',
 };

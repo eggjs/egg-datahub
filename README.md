@@ -41,11 +41,11 @@ exports.datahub = {
 };
 ```
 
-config.default.js (default config)
+config.unittest.js (default config)
 
 ```javascript
 exports.datahub = {
-  port: 5678,
+  port: 9200,
   hostname: 'localhost'
 };
 ```
