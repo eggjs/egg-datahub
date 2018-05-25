@@ -3,26 +3,27 @@
 const DataHubSDK = require('datahub-nodejs-sdk');
 
 module.exports = {
-  getClient(options = {}) {
-    const {
-      port,
-      hubName,
-    } = options;
+  datahubClient() {
 
-    const datahubClient = new DataHubSDK({
-      port,
-    });
+    const datahubClient = new DataHubSDK(this.config.datahub);
 
     datahubClient.switchScene = async (_options = {}) => {
 
       const scene = _options.scene || 'default';
 
       // update current scene
-      await datahubClient.updateSceneByProjectIdAndDataId(hubName, _options.name, {
-        currentScene: scene,
-      });
+      await datahubClient.updateSceneByProjectIdAndDataId(
+        this.config.datahub.hubName,
+        _options.name, {
+          currentScene: scene,
+        }
+      );
 
-      return await datahubClient.getSceneDataByProjectIdAndDataId(hubName, _options.name, scene);
+      return await datahubClient.getSceneDataByProjectIdAndDataId(
+        this.config.datahub.hubName,
+        _options.name,
+        scene
+      );
     };
 
     return datahubClient;
