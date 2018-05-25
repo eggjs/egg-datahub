@@ -3,7 +3,7 @@
   "version": "1.0.11",
   "description": "Macaca DataHub plugin for Egg.js",
   "eggPlugin": {
-    "name": "egg-datahub",
+    "name": "datahub",
     "env": [
       "local",
       "unittest"
