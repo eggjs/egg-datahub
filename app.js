@@ -1,28 +1,37 @@
 'use strict';
 
-const { spawn } = require('child_process');
+const path = require('path');
+const child_process = require('child_process');
+const dataHubPath = require.resolve('macaca-datahub');
+
+const binPath = path.join(dataHubPath, '..', 'bin', 'datahub.js');
 
 const env = Object.create(process.env);
 
 env.DATAHUB_STORE_PATH = process.cwd() + '/data';
 env.DATAHUB_SERVER_PORT = 5678;
 
-const datahub = spawn(
-  './node_modules/macaca-datahub/bin/macaca-datahub-server.js',
-  [ 'server' ],
+const child = child_process.spawn(
+  binPath,
+  [
+    'server',
+  ],
   {
     env,
   }
 );
 
-datahub.stdout.on('data', data => {
+child.stdout.setEncoding('utf8');
+child.stderr.setEncoding('utf8');
+
+child.stdout.on('data', data => {
   console.log(`datahub output: ${data}`);
 });
 
-datahub.stderr.on('data', data => {
+child.stderr.on('data', data => {
   console.log(`error: ${data}`);
 });
 
-datahub.on('close', code => {
+child.on('close', code => {
   console.log(`datahub exit code: ${code}`);
 });
