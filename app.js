@@ -6,32 +6,34 @@ const dataHubPath = require.resolve('macaca-datahub');
 
 const binPath = path.join(dataHubPath, '..', 'bin', 'datahub.js');
 
-const env = Object.create(process.env);
+const defaultConfig = {
+  port: 5678,
+};
 
-env.DATAHUB_STORE_PATH = process.cwd() + '/data';
-env.DATAHUB_SERVER_PORT = 5678;
+module.exports = app => {
+  const config = Object.assign(defaultConfig, app.config.datahub);
 
-const child = child_process.spawn(
-  binPath,
-  [
-    'server',
-  ],
-  {
-    env,
-  }
-);
+  const child = child_process.spawn(
+    binPath,
+    [
+      'server',
+      '-o',
+      JSON.stringify(config),
+    ],
+  );
 
-child.stdout.setEncoding('utf8');
-child.stderr.setEncoding('utf8');
+  child.stdout.setEncoding('utf8');
+  child.stderr.setEncoding('utf8');
 
-child.stdout.on('data', data => {
-  console.log(`datahub output: ${data}`);
-});
+  child.stdout.on('data', data => {
+    console.log(data);
+  });
 
-child.stderr.on('data', data => {
-  console.log(`error: ${data}`);
-});
+  child.stderr.on('data', data => {
+    console.log(data);
+  });
 
-child.on('close', code => {
-  console.log(`datahub exit code: ${code}`);
-});
+  child.on('close', code => {
+    console.log(`datahub exit code: ${code}`);
+  });
+};
