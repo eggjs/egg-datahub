@@ -27,15 +27,14 @@ module.exports = app => {
   child.stderr.setEncoding('utf8');
 
   child.stdout.on('data', data => {
-    console.log(data);
+    app.logger.info(data.trim());
   });
 
   child.stderr.on('data', data => {
-    console.log(data);
+    app.logger.error(data.trim());
   });
 
   child.on('close', code => {
-    console.log(`datahub exit code: ${code}`);
+    app.logger.info(`datahub exit with code: ${code}`);
   });
 };
-
