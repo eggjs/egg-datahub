@@ -6,16 +6,9 @@ const child_process = require('child_process');
 module.exports = app => {
   const defaultConfig = {
     port: 5678,
-    eggEnvList: [
-      'unittest',
-    ],
   };
 
   const config = Object.assign(defaultConfig, app.config.datahub);
-
-  if (config.eggEnvList.indexOf(app.env) < 0) {
-    return;
-  }
 
   const dataHubPath = require.resolve('macaca-datahub');
 
