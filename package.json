@@ -1,6 +1,6 @@
 {
   "name": "egg-datahub",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Macaca DataHub plugin for Egg.js",
   "eggPlugin": {
     "name": "datahub",

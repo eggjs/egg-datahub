@@ -2,16 +2,24 @@
 
 const path = require('path');
 const child_process = require('child_process');
-const dataHubPath = require.resolve('macaca-datahub');
-
-const binPath = path.join(dataHubPath, '..', 'bin', 'datahub.js');
-
-const defaultConfig = {
-  port: 5678,
-};
 
 module.exports = app => {
+  const defaultConfig = {
+    port: 5678,
+    eggEnvList: [
+      'unittest',
+    ],
+  };
+
   const config = Object.assign(defaultConfig, app.config.datahub);
+
+  if (config.eggEnvList.indexOf(app.env) < 0) {
+    return;
+  }
+
+  const dataHubPath = require.resolve('macaca-datahub');
+
+  const binPath = path.join(dataHubPath, '..', 'bin', 'datahub.js');
 
   const child = child_process.spawn(
     binPath,
@@ -37,3 +45,4 @@ module.exports = app => {
     console.log(`datahub exit code: ${code}`);
   });
 };
+
