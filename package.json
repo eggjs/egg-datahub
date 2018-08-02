@@ -1,6 +1,6 @@
 {
   "name": "egg-datahub",
-  "version": "1.0.17",
+  "version": "2.0.0",
   "description": "Macaca DataHub plugin for Egg.js",
   "eggPlugin": {
     "name": "datahub",
@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "datahub-nodejs-sdk": "^1.0.10",
-    "macaca-datahub": "1"
+    "macaca-datahub": "2"
   },
   "devDependencies": {
     "autod": "2",
