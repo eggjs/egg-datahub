@@ -9,19 +9,23 @@ module.exports = {
 
     datahubClient.switchScene = async (_options = {}) => {
 
+      if (!_options.pathname) {
+        throw new Error('pathname is required in switchScene');
+      }
+
       const scene = _options.scene || 'default';
 
       // update current scene
       await datahubClient.updateSceneByProjectIdAndDataId(
         this.config.datahub.hubName,
-        _options.name, {
+        _options.pathname, {
           currentScene: scene,
         }
       );
 
       return await datahubClient.getSceneDataByProjectIdAndDataId(
         this.config.datahub.hubName,
-        _options.name,
+        _options.pathname,
         scene
       );
     };
