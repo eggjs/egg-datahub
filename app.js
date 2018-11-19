@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const child_process = require('child_process');
+const spawn = require('cross-spawn');
 
 module.exports = app => {
   const defaultConfig = {
@@ -14,13 +14,13 @@ module.exports = app => {
 
   const binPath = path.join(dataHubPath, '..', 'bin', 'datahub.js');
 
-  const child = child_process.spawn(
+  const child = spawn(
     binPath,
     [
       'server',
       '-o',
       JSON.stringify(config),
-    ],
+    ]
   );
 
   child.stdout.setEncoding('utf8');

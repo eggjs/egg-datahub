@@ -20,6 +20,7 @@
     "eggPlugin"
   ],
   "dependencies": {
+    "cross-spawn": "^6.0.5",
     "datahub-nodejs-sdk": "2",
     "macaca-datahub": "2"
   },
@@ -31,8 +32,8 @@
     "egg-bin": "1",
     "egg-ci": "^1.8.0",
     "egg-mock": "^3.13.1",
-    "eslint": "3",
-    "eslint-config-egg": "3",
+    "eslint": "^5.9.0",
+    "eslint-config-egg": "^7.1.0",
     "git-contributor": "^1.0.8",
     "pre-commit": "^1.2.2"
   },
