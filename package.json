@@ -1,6 +1,6 @@
 {
   "name": "egg-datahub",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Macaca DataHub plugin for Egg.js",
   "eggPlugin": {
     "name": "datahub",
@@ -39,8 +39,8 @@
     "egg-mock": "^3.13.1",
     "eslint": "3",
     "eslint-config-egg": "3",
-    "git-contributor": "^1.0.8",
-    "pre-commit": "^1.2.2"
+    "git-contributor": "1",
+    "husky": "^2.4.0"
   },
   "engines": {
     "node": ">=8.9.0"
@@ -54,9 +54,11 @@
     "autod": "autod",
     "contributor": "git-contributor"
   },
-  "pre-commit": [
-    "lint"
-  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "ci": {
     "version": "8, 10"
   },
