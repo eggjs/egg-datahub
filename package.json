@@ -19,6 +19,12 @@
     "egg-plugin",
     "eggPlugin"
   ],
+  "files": [
+    "app",
+    "config",
+    "lib",
+    "agent.js"
+  ],
   "dependencies": {
     "datahub-nodejs-sdk": "2",
     "macaca-datahub": "2"
@@ -52,7 +58,7 @@
     "lint"
   ],
   "ci": {
-    "version": "8"
+    "version": "8, 10"
   },
   "license": "MIT"
 }
