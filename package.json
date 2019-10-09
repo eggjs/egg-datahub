@@ -26,6 +26,7 @@
     "agent.js"
   ],
   "dependencies": {
+    "cross-spawn": "^7.0.1",
     "datahub-nodejs-sdk": "2",
     "macaca-datahub": "2"
   },
