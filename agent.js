@@ -1,6 +1,6 @@
 'use strict';
 
-const child_process = require('child_process');
+const spawn = require('cross-spawn');
 
 module.exports = class {
   constructor(app) {
@@ -17,7 +17,7 @@ module.exports = class {
     const config = Object.assign({}, app.config.datahub);
     const binPath = require.resolve('macaca-datahub/bin/datahub-server.js');
 
-    const child = this.child = child_process.spawn(
+    const child = this.child = spawn(
       binPath,
       [
         '-o',
