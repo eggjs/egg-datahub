@@ -9,17 +9,17 @@
 [![egg version][egg-image]][egg-url]
 [![npm download][download-image]][download-url]
 
-[npm-image]: https://img.shields.io/npm/v/egg-datahub.svg?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/egg-datahub.svg
 [npm-url]: https://npmjs.org/package/egg-datahub
-[travis-image]: https://img.shields.io/travis/macacajs/egg-datahub.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/macacajs/egg-datahub.svg
 [travis-url]: https://travis-ci.org/macacajs/egg-datahub
-[coveralls-image]: https://img.shields.io/codecov/c/github/macacajs/egg-datahub.svg?style=flat-square
+[coveralls-image]: https://img.shields.io/codecov/c/github/macacajs/egg-datahub.svg
 [coveralls-url]: https://codecov.io/gh/macacajs/egg-datahub
-[node-image]: https://img.shields.io/badge/node.js-%3E=_8-green.svg?style=flat-square
+[node-image]: https://img.shields.io/badge/node.js-%3E=_8-green.svg
 [node-url]: http://nodejs.org/download/
-[egg-image]: https://img.shields.io/badge/egg-%3E=_2-green.svg?style=flat-square
+[egg-image]: https://img.shields.io/badge/egg-%3E=_2-green.svg
 [egg-url]: https://github.com/eggjs/egg
-[download-image]: https://img.shields.io/npm/dm/egg-datahub.svg?style=flat-square
+[download-image]: https://img.shields.io/npm/dm/egg-datahub.svg
 [download-url]: https://npmjs.org/package/egg-datahub
 
 > Macaca DataHub plugin for Egg.js
