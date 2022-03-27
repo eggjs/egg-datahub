@@ -27,8 +27,8 @@
   ],
   "dependencies": {
     "cross-spawn": "^7.0.1",
-    "datahub-nodejs-sdk": "2",
-    "macaca-datahub": "4"
+    "datahub-nodejs-sdk": "^2.2.1",
+    "macaca-datahub": "^4.1.1"
   },
   "devDependencies": {
     "autod": "2",
