@@ -11,10 +11,10 @@
 
 [npm-image]: https://img.shields.io/npm/v/egg-datahub.svg
 [npm-url]: https://npmjs.org/package/egg-datahub
-[travis-image]: https://img.shields.io/travis/macacajs/egg-datahub.svg
-[travis-url]: https://travis-ci.org/macacajs/egg-datahub
-[coveralls-image]: https://img.shields.io/codecov/c/github/macacajs/egg-datahub.svg
-[coveralls-url]: https://codecov.io/gh/macacajs/egg-datahub
+[travis-image]: https://img.shields.io/travis/eggjs/egg-datahub.svg
+[travis-url]: https://travis-ci.org/eggjs/egg-datahub
+[coveralls-image]: https://img.shields.io/codecov/c/github/eggjs/egg-datahub.svg
+[coveralls-url]: https://codecov.io/gh/eggjs/egg-datahub
 [node-image]: https://img.shields.io/badge/node.js-%3E=_8-green.svg
 [node-url]: http://nodejs.org/download/
 [egg-image]: https://img.shields.io/badge/egg-%3E=_2-green.svg
